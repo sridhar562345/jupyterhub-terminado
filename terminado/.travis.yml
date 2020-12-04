@@ -1,0 +1,17 @@
+os: linux
+dist: focal
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+
+# Install dependencies
+install:
+ - pip install tornado ptyprocess
+
+# command to run tests
+script: py.test
+
+# Enable new Travis stack, should speed up builds
+sudo: false
