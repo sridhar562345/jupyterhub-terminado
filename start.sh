@@ -5,10 +5,10 @@ sudo docker network create jupyterhub-network
 set -e
 
 # terminado image to spawn for every user
-sudo docker build --no-cache -t terminado:latest ./terminado/
+sudo docker build -t terminado:latest ./terminado/
 
 # set up jupyterhub server
-sudo docker-compose build --no-cache
+sudo docker-compose build
 sudo docker-compose up -d
 
 sleep 10s
