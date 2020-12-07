@@ -18,8 +18,8 @@ class QuickstartUser(HttpUser):
         options = webdriver.ChromeOptions()
         options.add_argument('window-size=1200x600')
         options.add_argument('headless')
-        options.addArguments("--no-sandbox")
-        options.addArguments("--disable-dev-shm-usage")
+        options.add_argument("no-sandbox")
+        options.add_argument("disable-dev-shm-usage")
         driver = webdriver.Chrome(options=options)
         driver.get('http://13.234.238.197:8000')
         element = WebDriverWait(driver, 10).until(
