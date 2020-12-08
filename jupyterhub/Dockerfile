@@ -72,7 +72,9 @@ RUN echo "root:ibhubs" | chpasswd
 
 RUN pip install tornado-xstatic terminado tornado XStatic XStatic-term.js
 
-RUN pip install 'dockerspawner==0.10.0' jupyterhub-tmpauthenticator
+RUN pip install git+https://github.com/sridhar562345/awsspawner4jhub.git
+
+RUN pip install jupyterhub-tmpauthenticator
 
 ADD terminado.js /usr/local/share/jupyterhub/static/terminado.js
 
