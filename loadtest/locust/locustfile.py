@@ -22,7 +22,7 @@ class QuickstartUser(HttpUser):
         options.add_argument("no-sandbox")
         driver = webdriver.Chrome(options=options)
         driver.get('http://65.0.168.78:8000')
-        element = WebDriverWait(driver, 10).until(
+        element = WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.CLASS_NAME, "terminal"))
         )
         terminal = driver.find_element_by_xpath("//div[@class='terminal']")
