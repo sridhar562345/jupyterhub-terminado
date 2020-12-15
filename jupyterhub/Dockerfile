@@ -60,7 +60,7 @@ ENV SHELL=/bin/bash \
 RUN  locale-gen $LC_ALL
 
 # always make sure pip is up to date!
-RUN python3 -m pip install --no-cache --upgrade setuptools pip
+# RUN python3 -m pip install --no-cache --upgrade setuptools pip
 
 RUN npm install -g configurable-http-proxy@^4.2.0 \
  && rm -rf ~/.npm
@@ -72,7 +72,9 @@ RUN echo "root:ibhubs" | chpasswd
 
 RUN pip install tornado-xstatic terminado tornado XStatic XStatic-term.js
 
-RUN pip install 'dockerspawner==0.10.0' jupyterhub-tmpauthenticator
+RUN pip install jupyterhub-tmpauthenticator
+
+RUN pip install git+https://github.com/sridhar562345/ecsspawner.git
 
 ADD terminado.js /usr/local/share/jupyterhub/static/terminado.js
 
